@@ -729,10 +729,6 @@ class mRodin3D_Gen2(Rodin3D_simple):
 # A dictionary that contains all nodes you want to export with their names
 # NOTE: names should be globally unique
 NODE_CLASS_MAPPINGS = {
-    "RodinImage3D": RodinImage3D,
-    "RodinMultipleImage3D": RodinMultipleImage3D,
-    "RodinText3D": RodinText3D,
-    "PromptForRodin": PromptForRodin,
     "LoadRodinAPIKEY": LoadRodinAPIKEY,
     "mRodin3D_Regular": mRodin3D_Regular,
     "mRodin3D_Detail": mRodin3D_Detail,
@@ -743,10 +739,6 @@ NODE_CLASS_MAPPINGS = {
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "RodinImage3D": "Rodin - Image to 3D",
-    "RodinMultipleImage3D": "Rodin - Multiple Images to 3D",
-    "RodinText3D": "Rodin - Text to 3D",
-    "PromptForRodin": "Rodin - Prompt for Rodin",
     "LoadRodinAPIKEY": "Rodin - API KEY",
     "mRodin3D_Regular": "Rodin - Regular Generate",
     "mRodin3D_Detail": "Rodin - Detail Generate",
