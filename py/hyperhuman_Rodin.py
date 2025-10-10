@@ -132,6 +132,23 @@ SUPPORTED_3D_EXTENSIONS = (
     '.usdz',
 )
 
+SIMPLE_COMMON_PARAS = {
+    "images": ("IMAGE", {"forceInput": True, "multiline": True}),
+    "api_key": ("APIKEY", {"forceInput": True, "multiline": True}),
+    "seed_": ("INT", {"default": 0, "min": 0, "max": 65535, "step": 1, "display": "number", }),
+    "Material_Type": (["PBR", "Shaded"], {"default":"PBR"}),
+    "Polygon_count": (["4K-Quad", "8K-Quad", "18K-Quad", "50K-Quad", "200K-Triangle"], {"default": "18K-Quad"})
+}
+
+SIMPLE_GEN2_PARAS = {
+    "images": ("IMAGE", {"forceInput": True, "multiline": True}),
+    "api_key": ("APIKEY", {"forceInput": True, "multiline": True}),
+    "seed_": ("INT", {"default": 0, "min": 0, "max": 65535, "step": 1, "display": "number", }),
+    "Material_Type": (["PBR", "Shaded"], {"default":"PBR"}),
+    "Polygon_count": (["4K-Quad", "8K-Quad", "18K-Quad", "50K-Quad", "2K-Triangle", "20K-Triangle", "150K-Triangle", "500K-Triangle"], {"default": "500K-Triangle"}),
+    "TAPose": ("BOOLEAN", {"default": False})
+}
+
 
 def post_request(url, api_key, data, files=None, max_retries=5, delay=2):
     headers = {"Authorization": f"Bearer {api_key}"}
@@ -341,7 +358,7 @@ class Rodin3D:
         files = [
             (
                 "images",
-                open(image, "rb") if isinstance(image, str) else tensor_to_filelike(image[0])
+                open(image, "rb") if isinstance(image, str) else tensor_to_filelike(image)
             )
             for image in images if image is not None]
         data = {
@@ -509,78 +526,204 @@ class LoadRodinAPIKEY:
 
     def main_func(self, api_key):
         return (api_key,)
+    
+
+def get_quality_mode(poly_count):
+    polycount = poly_count.split("-")
+    poly = polycount[1]
+    count = polycount[0]
+    if poly == "Triangle":
+        mesh_mode = "Raw"
+    elif poly == "Quad":
+        mesh_mode = "Quad"
+    else:
+        mesh_mode = "Quad"
+
+    if count == "4K":
+        quality_override = 4000
+    elif count == "8K":
+        quality_override = 8000
+    elif count == "18K":
+        quality_override = 18000
+    elif count == "50K":
+        quality_override = 50000
+    elif count == "2K":
+        quality_override = 2000
+    elif count == "20K":
+        quality_override = 20000
+    elif count == "150K":
+        quality_override = 150000
+    elif count == "500K":
+        quality_override = 500000
+    else:
+        quality_override = 18000
+
+    return mesh_mode, quality_override
+    
+
+class Rodin3D_simple():
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("model_path",)
+    FUNCTION = "main_func"
+    OUTPUT_NODE = True
+    CATEGORY = "Mesh/Rodin"
 
 
+    def process_request(self, api_key, images, tier, seed, material, poly_count, TAPose=False) -> None:
 
-class Preview_3DMesh:
+        mesh_mode, quality_override = get_quality_mode(poly_count)
+        # Prepare request data and files
+        files = [
+            (
+                "images",
+                open(image, "rb") if isinstance(image, str) else tensor_to_filelike(image)
+            )
+            for image in images if image is not None]
+        data = {
+            "seed": seed,
+            "material": material,
+            "quality_override": quality_override,
+            "mesh_mode": mesh_mode,
+            "tier": tier,
+            "TAPose": TAPose,
+        }
+        #logging.info(f"[ Rodin3D.process_request ]\n data = {data}, files = {files}")
+        LogInfomation(data, "data")
+        LogInfomation(files, "files")
+        response = post_request("rodin", api_key, data, files=files)
 
+        # Submit and handle the response
+        if response is not None and "uuid" in response:
+            model_path = self.submit_poll_download(api_key, response['uuid'], response['jobs']['subscription_key'])
+            print(f"model_path = {model_path}")
+            return model_path
+        else:
+            logging.info(f"[ Rodin3D.process_request ] Error submitting the job:\n{response}")
+            # shaded = diffuse = normal = pbr = load_image(ROOT_PATH+'/asset/error.png')
+            return ""
+
+    def submit_poll_download(self, api_key, uuid, subscription_key):
+        """Submits the job, polls for its completion, and downloads the result when ready."""
+        polling_interval = 2  # Interval in seconds to wait between checks
+
+        total_seconds_estimated = 60
+        pbar = comfy.utils.ProgressBar(total_seconds_estimated)
+
+        while True:
+            status = check_status(api_key, subscription_key)
+            #logging.info(f"[ Rodin3D.process_request ] status = {status}")
+            LogInfomation(status, "status")
+
+            if all([job["status"] == "Done" for job in status]):
+                logging.info(f"[ Rodin3D.process_request ] Generation complete. Downloading files...")
+                _, _, _, _,save_model_path = download_files(api_key, uuid)
+                #print(f"[save model path] : {save_model_path}")
+                return save_model_path
+            
+            if any([job["status"] == "Failed" for job in status]):
+                # shaded = diffuse = normal = pbr = load_image(ROOT_PATH+'/asset/error.png')
+                return ""
+
+            time.sleep(polling_interval)
+            pbar.update(2)
+
+class mRodin3D_Regular(Rodin3D_simple):
     @classmethod
     def INPUT_TYPES(s):
         return {
             "required": {
-                "model_path":("STRING", {"default": '', "multiline": False,"forceInput": True, }),
-                # NOTE: function which draging model file and getting the file path has done
-                # "test": ("MODELUPLOAD", {"widget": "model_path"}),
+                **SIMPLE_COMMON_PARAS,
             },
-            # "optional": {
-            #     "shaded":("IMAGE", {"multiline": True}),
-            #     "diffuse":("IMAGE", { "multiline": True}),
-            #     "normal":("IMAGE", {"multiline": True}),
-            #     "pbr":("IMAGE", {"multiline": True}),
-            # },
         }
     
-    OUTPUT_NODE = True
-    RETURN_TYPES = ()
-    FUNCTION = "preview_mesh"
-    CATEGORY = "Comfy3D/Visualize"
 
-    def save_image(self, images, path):
-        for (batch_number, image) in enumerate(images):
-            i = 255. * image.cpu().numpy()
-            img = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
-            metadata = None
-            img.save(path, pnginfo=metadata)
-        return path
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count):
+        num_images = images.shape[0]
+        m_images = []
+        for i in range(num_images):
+            m_images.append(images[i])
+        model_path = self.process_request(api_key, m_images, "Regular", seed_, Material_Type, Polygon_count, TAPose=False)
+        return (model_path,)
 
+class mRodin3D_Detail(Rodin3D_simple):
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                **SIMPLE_COMMON_PARAS,
+            },
+        }
     
-    def preview_mesh(self, model_path, shaded = None, diffuse = None, normal = None, pbr = None):
-        
-        model_folder, filename = os.path.split(model_path)
 
-        
-        if not os.path.isabs(model_path):
-            model_folder = os.path.join(comfy_paths.output_directory, model_folder)
-            model_path = os.path.join(comfy_paths.output_directory, model_path)
-        
-        if not filename.lower().endswith(SUPPORTED_3D_EXTENSIONS):
-            logging.error(f"[{self.__class__.__name__}] File name {filename} does not end with supported 3D file extensions: {SUPPORTED_3D_EXTENSIONS}")
-            model_path = ""
-        # shaded_path = diffuse_path = normal_path = pbr_path = ''
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count):
+        num_images = images.shape[0]
+        m_images = []
+        for i in range(num_images):
+            m_images.append(images[i])
+        model_path = self.process_request(api_key, m_images, "Detail", seed_, Material_Type, Polygon_count, TAPose=False)
+        return (model_path,)
 
-        # if shaded is not None:
-        #     self.save_image(shaded, model_folder + '/shaded.png');
-        #     shaded_path = model_folder + '/texture_shaded.png'
-        # if diffuse is not None:
-        #     self.save_image(diffuse, model_folder + '/diffuse.png');
-        #     diffuse_path = model_folder + '/texture_diffuse.png'
-        # if normal is not None:
-        #     self.save_image(normal, model_folder + '/normal.png');
-        #     normal_path = model_folder + '/texture_normal.png'
-        # if pbr is not None:
-        #     self.save_image(pbr, model_folder + '/pbr.png');
-        #     pbr_path = model_folder + '/texture_pbr.png'
+
+class mRodin3D_Smooth(Rodin3D_simple):
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                **SIMPLE_COMMON_PARAS,
+            },
+        }
+    
+
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count):
+        num_images = images.shape[0]
+        m_images = []
+        for i in range(num_images):
+            m_images.append(images[i])
+        model_path = self.process_request(api_key, m_images, "Smooth", seed_, Material_Type, Polygon_count, TAPose=False)
         
-        previews = [
-            {
-                "model_path": model_path, 
-                # "shaded_path": shaded_path, 
-                # "diffuse_path": diffuse_path,
-                # "normal_path": normal_path, 
-                # "pbr_path": pbr_path, 
-            }
-        ]
-        return {"ui": {"previews": previews}, "result": ()}
+        return (model_path,)
+    
+class mRodin3D_Sketch(Rodin3D_simple):
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                    "images": ("IMAGE", {"forceInput": True, "multiline": True}),
+                    "api_key": ("APIKEY", {"forceInput": True, "multiline": True}),
+                    "seed_": ("INT", {"default": 0, "min": 0, "max": 65535, "step": 1, "display": "number", }),
+                    "Material_Type": (["PBR", "Shaded"], {"default":"PBR"}),
+            },
+        }
+    
+
+    def main_func(self, images, api_key, seed_, Material_Type):
+        num_images = images.shape[0]
+        m_images = []
+        for i in range(num_images):
+            m_images.append(images[i])
+        model_path = self.process_request(api_key, m_images, "Sketch", seed_, Material_Type, "18K-Quad", TAPose=False)
+        print(model_path)
+        return (model_path,)
+    
+
+class mRodin3D_Gen2(Rodin3D_simple):
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                    **SIMPLE_GEN2_PARAS,
+            },
+        }
+    
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, TAPose):
+        num_images = images.shape[0]
+        m_images = []
+        for i in range(num_images):
+            m_images.append(images[i])
+        model_path = self.process_request(api_key, m_images, "Gen-2", seed_, Material_Type, Polygon_count, TAPose=TAPose)
+        
+        return (model_path,)
+    
 
 
 # A dictionary that contains all nodes you want to export with their names
@@ -591,7 +734,11 @@ NODE_CLASS_MAPPINGS = {
     "RodinText3D": RodinText3D,
     "PromptForRodin": PromptForRodin,
     "LoadRodinAPIKEY": LoadRodinAPIKEY,
-    "Preview_3DMesh":Preview_3DMesh,
+    "mRodin3D_Regular": mRodin3D_Regular,
+    "mRodin3D_Detail": mRodin3D_Detail,
+    "mRodin3D_Smooth": mRodin3D_Smooth,
+    "mRodin3D_Sketch": mRodin3D_Sketch,
+    "mRodin3D_Gen2": mRodin3D_Gen2,
 }
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
@@ -601,5 +748,9 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "RodinText3D": "Rodin - Text to 3D",
     "PromptForRodin": "Rodin - Prompt for Rodin",
     "LoadRodinAPIKEY": "Rodin - API KEY",
-    "Preview_3DMesh":"Rodin - Preview 3D Mesh",
+    "mRodin3D_Regular": "Rodin - Regular Generate",
+    "mRodin3D_Detail": "Rodin - Detail Generate",
+    "mRodin3D_Smooth": "Rodin - Smooth Generate",
+    "mRodin3D_Sketch": "Rodin - Sketch Generate",
+    "mRodin3D_Gen2": "Rodin - Gen2 Generate"
 }
