@@ -137,7 +137,8 @@ SIMPLE_COMMON_PARAS = {
     "api_key": ("APIKEY", {"forceInput": True, "multiline": True}),
     "seed_": ("INT", {"default": 0, "min": 0, "max": 65535, "step": 1, "display": "number", }),
     "Material_Type": (["PBR", "Shaded"], {"default":"PBR"}),
-    "Polygon_count": (["4K-Quad", "8K-Quad", "18K-Quad", "50K-Quad", "200K-Triangle"], {"default": "18K-Quad"})
+    "Polygon_count": (["4K-Quad", "8K-Quad", "18K-Quad", "50K-Quad", "200K-Triangle"], {"default": "18K-Quad"}),
+    "height":("INT", {"description": "The height of the model, in cm.", "default": 10, "min": 1, "max": 65535, "step": 1, "display": "number"}),
 }
 
 SIMPLE_GEN2_PARAS = {
@@ -146,7 +147,8 @@ SIMPLE_GEN2_PARAS = {
     "seed_": ("INT", {"default": 0, "min": 0, "max": 65535, "step": 1, "display": "number", }),
     "Material_Type": (["PBR", "Shaded"], {"default":"PBR"}),
     "Polygon_count": (["4K-Quad", "8K-Quad", "18K-Quad", "50K-Quad", "2K-Triangle", "20K-Triangle", "150K-Triangle", "500K-Triangle", "1M-Triangle"], {"default": "500K-Triangle"}),
-    "TAPose": ("BOOLEAN", {"default": False})
+    "TAPose": ("BOOLEAN", {"default": False}),
+    "height":("INT", {"description": "The height of the model, in cm.", "default": 10, "min": 1, "max": 65535, "step": 1, "display": "number"}),
 }
 
 
@@ -571,7 +573,7 @@ class Rodin3D_simple():
     CATEGORY = "Mesh/Rodin"
 
 
-    def process_request(self, api_key, images, tier, seed, material, poly_count, TAPose=False, bbox=None) -> None:
+    def process_request(self, api_key, images, tier, seed, material, poly_count, TAPose=False, bbox=None, height=10) -> None:
 
         mesh_mode, quality_override = get_quality_mode(poly_count)
         # Prepare request data and files
@@ -589,6 +591,7 @@ class Rodin3D_simple():
                 "mesh_mode": mesh_mode,
                 "tier": tier,
                 "TAPose": TAPose,
+                "height":height,
             }
         else:
             data = {
@@ -599,6 +602,7 @@ class Rodin3D_simple():
                 "tier": tier,
                 "TAPose": TAPose,
                 "bbox_condition": bbox,
+                "height": height,
             }
         #logging.info(f"[ Rodin3D.process_request ]\n data = {data}, files = {files}")
         LogInfomation(data, "data")
@@ -653,12 +657,12 @@ class mRodin3D_Regular(Rodin3D_simple):
         }
     
 
-    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, bbox=None):
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, height, bbox=None):
         num_images = images.shape[0]
         m_images = []
         for i in range(num_images):
             m_images.append(images[i])
-        model_path = self.process_request(api_key, m_images, "Regular", seed_, Material_Type, Polygon_count, TAPose=False, bbox=bbox)
+        model_path = self.process_request(api_key, m_images, "Regular", seed_, Material_Type, Polygon_count, TAPose=False, bbox=bbox, height = height)
         return (model_path,)
 
 class mRodin3D_Detail(Rodin3D_simple):
@@ -674,12 +678,12 @@ class mRodin3D_Detail(Rodin3D_simple):
         }
     
 
-    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, bbox=None):
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, height, bbox=None):
         num_images = images.shape[0]
         m_images = []
         for i in range(num_images):
             m_images.append(images[i])
-        model_path = self.process_request(api_key, m_images, "Detail", seed_, Material_Type, Polygon_count, TAPose=False, bbox=bbox)
+        model_path = self.process_request(api_key, m_images, "Detail", seed_, Material_Type, Polygon_count, TAPose=False, bbox=bbox, height = height)
         return (model_path,)
 
 
@@ -696,12 +700,12 @@ class mRodin3D_Smooth(Rodin3D_simple):
         }
     
 
-    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, bbox=None):
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, height, bbox=None):
         num_images = images.shape[0]
         m_images = []
         for i in range(num_images):
             m_images.append(images[i])
-        model_path = self.process_request(api_key, m_images, "Smooth", seed_, Material_Type, Polygon_count, TAPose=False, bbox=bbox)
+        model_path = self.process_request(api_key, m_images, "Smooth", seed_, Material_Type, Polygon_count, TAPose=False, bbox=bbox, height = height)
         
         return (model_path,)
     
@@ -736,19 +740,19 @@ class mRodin3D_Gen2(Rodin3D_simple):
     def INPUT_TYPES(s):
         return {
             "required": {
-                    **SIMPLE_GEN2_PARAS,
+                **SIMPLE_GEN2_PARAS,
             },
             "optional":{
                 "bbox": ("STRING",{"forceInput":True,"multiline": True}),
             },
         }
     
-    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, TAPose, bbox=None):
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, TAPose, height, bbox=None):
         num_images = images.shape[0]
         m_images = []
         for i in range(num_images):
             m_images.append(images[i])
-        model_path = self.process_request(api_key, m_images, "Gen-2", seed_, Material_Type, Polygon_count, TAPose=TAPose, bbox=bbox)
+        model_path = self.process_request(api_key, m_images, "Gen-2", seed_, Material_Type, Polygon_count, TAPose=TAPose, bbox=bbox, height = height)
         
         return (model_path,)
     
