@@ -145,7 +145,7 @@ SIMPLE_GEN2_PARAS = {
     "api_key": ("APIKEY", {"forceInput": True, "multiline": True}),
     "seed_": ("INT", {"default": 0, "min": 0, "max": 65535, "step": 1, "display": "number", }),
     "Material_Type": (["PBR", "Shaded"], {"default":"PBR"}),
-    "Polygon_count": (["4K-Quad", "8K-Quad", "18K-Quad", "50K-Quad", "2K-Triangle", "20K-Triangle", "150K-Triangle", "500K-Triangle"], {"default": "500K-Triangle"}),
+    "Polygon_count": (["4K-Quad", "8K-Quad", "18K-Quad", "50K-Quad", "2K-Triangle", "20K-Triangle", "150K-Triangle", "500K-Triangle", "1M-Triangle"], {"default": "500K-Triangle"}),
     "TAPose": ("BOOLEAN", {"default": False})
 }
 
@@ -555,6 +555,8 @@ def get_quality_mode(poly_count):
         quality_override = 150000
     elif count == "500K":
         quality_override = 500000
+    elif count == "1M":
+        quality_override = 1000000
     else:
         quality_override = 18000
 
@@ -569,7 +571,7 @@ class Rodin3D_simple():
     CATEGORY = "Mesh/Rodin"
 
 
-    def process_request(self, api_key, images, tier, seed, material, poly_count, TAPose=False) -> None:
+    def process_request(self, api_key, images, tier, seed, material, poly_count, TAPose=False, bbox=None) -> None:
 
         mesh_mode, quality_override = get_quality_mode(poly_count)
         # Prepare request data and files
@@ -579,14 +581,25 @@ class Rodin3D_simple():
                 open(image, "rb") if isinstance(image, str) else tensor_to_filelike(image)
             )
             for image in images if image is not None]
-        data = {
-            "seed": seed,
-            "material": material,
-            "quality_override": quality_override,
-            "mesh_mode": mesh_mode,
-            "tier": tier,
-            "TAPose": TAPose,
-        }
+        if bbox == None:
+            data = {
+                "seed": seed,
+                "material": material,
+                "quality_override": quality_override,
+                "mesh_mode": mesh_mode,
+                "tier": tier,
+                "TAPose": TAPose,
+            }
+        else:
+            data = {
+                "seed": seed,
+                "material": material,
+                "quality_override": quality_override,
+                "mesh_mode": mesh_mode,
+                "tier": tier,
+                "TAPose": TAPose,
+                "bbox_condition": bbox,
+            }
         #logging.info(f"[ Rodin3D.process_request ]\n data = {data}, files = {files}")
         LogInfomation(data, "data")
         LogInfomation(files, "files")
@@ -634,15 +647,18 @@ class mRodin3D_Regular(Rodin3D_simple):
             "required": {
                 **SIMPLE_COMMON_PARAS,
             },
+            "optional":{
+                "bbox": ("STRING",{"forceInput":True,"multiline": True}),
+            },
         }
     
 
-    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count):
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, bbox=None):
         num_images = images.shape[0]
         m_images = []
         for i in range(num_images):
             m_images.append(images[i])
-        model_path = self.process_request(api_key, m_images, "Regular", seed_, Material_Type, Polygon_count, TAPose=False)
+        model_path = self.process_request(api_key, m_images, "Regular", seed_, Material_Type, Polygon_count, TAPose=False, bbox=bbox)
         return (model_path,)
 
 class mRodin3D_Detail(Rodin3D_simple):
@@ -652,15 +668,18 @@ class mRodin3D_Detail(Rodin3D_simple):
             "required": {
                 **SIMPLE_COMMON_PARAS,
             },
+            "optional":{
+                "bbox": ("STRING",{"forceInput":True,"multiline": True}),
+            },
         }
     
 
-    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count):
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, bbox=None):
         num_images = images.shape[0]
         m_images = []
         for i in range(num_images):
             m_images.append(images[i])
-        model_path = self.process_request(api_key, m_images, "Detail", seed_, Material_Type, Polygon_count, TAPose=False)
+        model_path = self.process_request(api_key, m_images, "Detail", seed_, Material_Type, Polygon_count, TAPose=False, bbox=bbox)
         return (model_path,)
 
 
@@ -671,15 +690,18 @@ class mRodin3D_Smooth(Rodin3D_simple):
             "required": {
                 **SIMPLE_COMMON_PARAS,
             },
+            "optional":{
+                "bbox": ("STRING",{"forceInput":True,"multiline": True}),
+            },
         }
     
 
-    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count):
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, bbox=None):
         num_images = images.shape[0]
         m_images = []
         for i in range(num_images):
             m_images.append(images[i])
-        model_path = self.process_request(api_key, m_images, "Smooth", seed_, Material_Type, Polygon_count, TAPose=False)
+        model_path = self.process_request(api_key, m_images, "Smooth", seed_, Material_Type, Polygon_count, TAPose=False, bbox=bbox)
         
         return (model_path,)
     
@@ -688,20 +710,23 @@ class mRodin3D_Sketch(Rodin3D_simple):
     def INPUT_TYPES(s):
         return {
             "required": {
-                    "images": ("IMAGE", {"forceInput": True, "multiline": True}),
-                    "api_key": ("APIKEY", {"forceInput": True, "multiline": True}),
-                    "seed_": ("INT", {"default": 0, "min": 0, "max": 65535, "step": 1, "display": "number", }),
-                    "Material_Type": (["PBR", "Shaded"], {"default":"PBR"}),
+                "images": ("IMAGE", {"forceInput": True, "multiline": True}),
+                "api_key": ("APIKEY", {"forceInput": True, "multiline": True}),
+                "seed_": ("INT", {"default": 0, "min": 0, "max": 65535, "step": 1, "display": "number", }),
+                "Material_Type": (["PBR", "Shaded"], {"default":"PBR"}),
+            },
+            "optional":{
+                "bbox": ("STRING",{"forceInput":True,"multiline": True}),
             },
         }
     
 
-    def main_func(self, images, api_key, seed_, Material_Type):
+    def main_func(self, images, api_key, seed_, Material_Type, bbox=None):
         num_images = images.shape[0]
         m_images = []
         for i in range(num_images):
             m_images.append(images[i])
-        model_path = self.process_request(api_key, m_images, "Sketch", seed_, Material_Type, "18K-Quad", TAPose=False)
+        model_path = self.process_request(api_key, m_images, "Sketch", seed_, Material_Type, "18K-Quad", TAPose=False, bbox=bbox)
         print(model_path)
         return (model_path,)
     
@@ -713,16 +738,41 @@ class mRodin3D_Gen2(Rodin3D_simple):
             "required": {
                     **SIMPLE_GEN2_PARAS,
             },
+            "optional":{
+                "bbox": ("STRING",{"forceInput":True,"multiline": True}),
+            },
         }
     
-    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, TAPose):
+    def main_func(self, images, api_key, seed_, Material_Type, Polygon_count, TAPose, bbox=None):
         num_images = images.shape[0]
         m_images = []
         for i in range(num_images):
             m_images.append(images[i])
-        model_path = self.process_request(api_key, m_images, "Gen-2", seed_, Material_Type, Polygon_count, TAPose=TAPose)
+        model_path = self.process_request(api_key, m_images, "Gen-2", seed_, Material_Type, Polygon_count, TAPose=TAPose, bbox=bbox)
         
         return (model_path,)
+    
+
+class Rodin3D_bbox_controlnet():
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("bbox",)
+    FUNCTION = "main_func"
+    CATEGORY = "Mesh/Rodin"
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required":{
+                "Width": ("INT", {"default": 100, "min": 1, "max": 300, "step": 1, "display": "number"}),
+                "Height": ("INT", {"default": 100, "min": 1, "max": 300, "step": 1, "display": "number"}),
+                "Length": ("INT", {"default": 100, "min": 1, "max": 300, "step": 1, "display": "number"}),
+            },
+        }
+    
+    def main_func(self, Width, Height, Length):
+        bbox_control = str([Width, Height, Length])
+        # print(bbox_control)
+        return (bbox_control,)
     
 
 
@@ -735,6 +785,7 @@ NODE_CLASS_MAPPINGS = {
     "mRodin3D_Smooth": mRodin3D_Smooth,
     "mRodin3D_Sketch": mRodin3D_Sketch,
     "mRodin3D_Gen2": mRodin3D_Gen2,
+    "Rodin3D_bbox_controlnet": Rodin3D_bbox_controlnet,
 }
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
@@ -744,5 +795,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "mRodin3D_Detail": "Rodin - Detail Generate",
     "mRodin3D_Smooth": "Rodin - Smooth Generate",
     "mRodin3D_Sketch": "Rodin - Sketch Generate",
-    "mRodin3D_Gen2": "Rodin - Gen2 Generate"
+    "mRodin3D_Gen2": "Rodin - Gen2 Generate",
+    "Rodin3D_bbox_controlnet": "Rodin - BBox Controlnet",
 }
