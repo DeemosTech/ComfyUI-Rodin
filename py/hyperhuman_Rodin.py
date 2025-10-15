@@ -137,7 +137,7 @@ SIMPLE_COMMON_PARAS = {
     "api_key": ("APIKEY", {"forceInput": True, "multiline": True}),
     "seed_": ("INT", {"default": 0, "min": 0, "max": 65535, "step": 1, "display": "number", }),
     "Material_Type": (["PBR", "Shaded"], {"default":"PBR"}),
-    "Polygon_count": (["4K-Quad", "8K-Quad", "18K-Quad", "50K-Quad", "200K-Triangle"], {"default": "18K-Quad"}),
+    "Polygon_count": (["4K-Quad", "8K-Quad", "18K-Quad", "50K-Quad", "200K-Quad", "200K-Triangle"], {"default": "18K-Quad"}),
 }
 
 SIMPLE_GEN2_PARAS = {
@@ -145,7 +145,7 @@ SIMPLE_GEN2_PARAS = {
     "api_key": ("APIKEY", {"forceInput": True, "multiline": True}),
     "seed_": ("INT", {"default": 0, "min": 0, "max": 65535, "step": 1, "display": "number", }),
     "Material_Type": (["PBR", "Shaded"], {"default":"PBR"}),
-    "Polygon_count": (["4K-Quad", "8K-Quad", "18K-Quad", "50K-Quad", "2K-Triangle", "20K-Triangle", "150K-Triangle", "500K-Triangle", "1M-Triangle"], {"default": "500K-Triangle"}),
+    "Polygon_count": (["4K-Quad", "8K-Quad", "18K-Quad", "50K-Quad", "200K-Quad", "2K-Triangle", "20K-Triangle", "150K-Triangle", "500K-Triangle", "1M-Triangle"], {"default": "500K-Triangle"}),
     "TAPose": ("BOOLEAN", {"default": False}),
 }
 
@@ -547,6 +547,8 @@ def get_quality_mode(poly_count):
         quality_override = 18000
     elif count == "50K":
         quality_override = 50000
+    elif count == "200K":
+        quality_override = 200000
     elif count == "2K":
         quality_override = 2000
     elif count == "20K":
