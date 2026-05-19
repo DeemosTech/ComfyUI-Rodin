@@ -1,8 +1,8 @@
 {
   "id": "c73f1ca0-0ff5-4411-b836-7773aa294085",
   "revision": 0,
-  "last_node_id": 74,
-  "last_link_id": 98,
+  "last_node_id": 80,
+  "last_link_id": 113,
   "nodes": [
     {
       "id": 50,
@@ -376,6 +376,8 @@
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mRodin3D_Regular"
       },
       "widgets_values": [
@@ -432,6 +434,8 @@
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mRodin3D_Smooth"
       },
       "widgets_values": [
@@ -488,6 +492,8 @@
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mRodin3D_Detail"
       },
       "widgets_values": [
@@ -538,6 +544,8 @@
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mRodin3D_Sketch"
       },
       "widgets_values": [
@@ -578,7 +586,7 @@
           "widget": {
             "name": "model_file"
           },
-          "link": 73
+          "link": 101
         }
       ],
       "outputs": [],
@@ -640,7 +648,7 @@
           "widget": {
             "name": "model_file"
           },
-          "link": 74
+          "link": 104
         }
       ],
       "outputs": [],
@@ -702,7 +710,7 @@
           "widget": {
             "name": "model_file"
           },
-          "link": 98
+          "link": 107
         }
       ],
       "outputs": [],
@@ -720,7 +728,21 @@
         },
         "Camera Config": {
           "cameraType": "perspective",
-          "fov": 35
+          "fov": 35,
+          "state": {
+            "position": {
+              "x": 6.410507195353629,
+              "y": 10.57908236507061,
+              "z": 6.41050719535363
+            },
+            "target": {
+              "x": 0,
+              "y": 2.5,
+              "z": 0
+            },
+            "zoom": 1,
+            "cameraType": "perspective"
+          }
         },
         "Light Config": {
           "intensity": 3
@@ -729,126 +751,6 @@
       "widgets_values": [
         "D:/ComfyUI/ComfyUI/output/2026-05-19_17-20-40/base_basic_pbr.glb",
         ""
-      ]
-    },
-    {
-      "id": 41,
-      "type": "mRodin3D_Gen_2_5_Fast_Image",
-      "pos": [
-        411.16389116583025,
-        973.1071409120397
-      ],
-      "size": [
-        323.7154296875,
-        262
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "api_key",
-          "type": "APIKEY",
-          "link": 66
-        },
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 82
-        },
-        {
-          "name": "bbox",
-          "shape": 7,
-          "type": "STRING",
-          "link": null
-        },
-        {
-          "name": "height_cm",
-          "shape": 7,
-          "type": "INT",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "model_path",
-          "type": "STRING",
-          "links": [
-            73
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "mRodin3D_Gen_2_5_Fast_Image"
-      },
-      "widgets_values": [
-        "Gen-2.5-Medium",
-        0,
-        "PBR",
-        "glb",
-        20000,
-        "Default",
-        false
-      ]
-    },
-    {
-      "id": 43,
-      "type": "mRodin3D_Gen_2_5_Regular_Image",
-      "pos": [
-        894.6996364783324,
-        970.8081409120406
-      ],
-      "size": [
-        346.3150390625,
-        262
-      ],
-      "flags": {},
-      "order": 18,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "api_key",
-          "type": "APIKEY",
-          "link": 67
-        },
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 83
-        },
-        {
-          "name": "bbox",
-          "shape": 7,
-          "type": "STRING",
-          "link": null
-        },
-        {
-          "name": "height_cm",
-          "shape": 7,
-          "type": "INT",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "model_path",
-          "type": "STRING",
-          "links": [
-            74
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "mRodin3D_Gen_2_5_Regular_Image"
-      },
-      "widgets_values": [
-        "Gen-2.5-Medium",
-        0,
-        "PBR",
-        "Default",
-        "glb",
-        "Default",
-        false
       ]
     },
     {
@@ -884,7 +786,7 @@
           "widget": {
             "name": "model_file"
           },
-          "link": 79
+          "link": 109
         }
       ],
       "outputs": [],
@@ -960,7 +862,7 @@
           "widget": {
             "name": "model_file"
           },
-          "link": 80
+          "link": 111
         }
       ],
       "outputs": [],
@@ -1036,7 +938,7 @@
           "widget": {
             "name": "model_file"
           },
-          "link": 95
+          "link": 113
         }
       ],
       "outputs": [],
@@ -1099,9 +1001,9 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            82,
-            83,
-            97
+            100,
+            103,
+            106
           ]
         },
         {
@@ -1249,124 +1151,14 @@
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mRodin3D_Gen2"
       },
       "widgets_values": [
         0,
         "PBR",
         "500K-Triangle",
-        false
-      ]
-    },
-    {
-      "id": 42,
-      "type": "mRodin3D_Gen_2_5_Fast_Text",
-      "pos": [
-        -134.49270272041795,
-        2190.3819101720374
-      ],
-      "size": [
-        400,
-        296
-      ],
-      "flags": {},
-      "order": 20,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "api_key",
-          "type": "APIKEY",
-          "link": 76
-        },
-        {
-          "name": "bbox",
-          "shape": 7,
-          "type": "STRING",
-          "link": null
-        },
-        {
-          "name": "height_cm",
-          "shape": 7,
-          "type": "INT",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "model_path",
-          "type": "STRING",
-          "links": [
-            79
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "mRodin3D_Gen_2_5_Fast_Text"
-      },
-      "widgets_values": [
-        "Low-poly stylized tree.",
-        "Gen-2.5-Medium",
-        0,
-        "PBR",
-        "glb",
-        20000,
-        "Default",
-        false
-      ]
-    },
-    {
-      "id": 44,
-      "type": "mRodin3D_Gen_2_5_Regular_Text",
-      "pos": [
-        326.6987972795823,
-        2192.1364101720383
-      ],
-      "size": [
-        400,
-        296
-      ],
-      "flags": {},
-      "order": 21,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "api_key",
-          "type": "APIKEY",
-          "link": 77
-        },
-        {
-          "name": "bbox",
-          "shape": 7,
-          "type": "STRING",
-          "link": null
-        },
-        {
-          "name": "height_cm",
-          "shape": 7,
-          "type": "INT",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "model_path",
-          "type": "STRING",
-          "links": [
-            80
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "mRodin3D_Gen_2_5_Regular_Text"
-      },
-      "widgets_values": [
-        "Low-poly stylized tree.",
-        "Gen-2.5-Medium",
-        0,
-        "PBR",
-        "Default",
-        "glb",
-        "Default",
         false
       ]
     },
@@ -1434,6 +1226,8 @@
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mRodin3D_bbox_controlnet"
       },
       "widgets_values": [
@@ -1490,6 +1284,8 @@
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mRodin3D_Gen2"
       },
       "widgets_values": [
@@ -1623,6 +1419,8 @@
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mLoadRodinAPIKEY"
       },
       "widgets_values": [
@@ -1654,6 +1452,8 @@
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mLoadRodinAPIKEY"
       },
       "widgets_values": [
@@ -1688,6 +1488,8 @@
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mLoadRodinAPIKEY"
       },
       "widgets_values": [
@@ -1714,13 +1516,15 @@
           "name": "api_key",
           "type": "APIKEY",
           "links": [
-            66,
-            67,
-            96
+            99,
+            102,
+            105
           ]
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mLoadRodinAPIKEY"
       },
       "widgets_values": [
@@ -1747,13 +1551,15 @@
           "name": "api_key",
           "type": "APIKEY",
           "links": [
-            76,
-            77,
-            94
+            108,
+            110,
+            112
           ]
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mLoadRodinAPIKEY"
       },
       "widgets_values": [
@@ -1761,24 +1567,29 @@
       ]
     },
     {
-      "id": 73,
-      "type": "mRodin3D_Gen_2_5_ExtremeHigh_Text",
+      "id": 75,
+      "type": "mRodin3D_Gen_2_5_Fast_Image",
       "pos": [
-        801.8415972795831,
-        2195.2945101720397
+        411.16389116583025,
+        973.1071409120397
       ],
       "size": [
-        400,
-        344
+        323.7154296875,
+        262
       ],
       "flags": {},
-      "order": 22,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
           "name": "api_key",
           "type": "APIKEY",
-          "link": 94
+          "link": 99
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 100
         },
         {
           "name": "bbox",
@@ -1798,28 +1609,89 @@
           "name": "model_path",
           "type": "STRING",
           "links": [
-            95
+            101
           ]
         }
       ],
       "properties": {
-        "Node name for S&R": "mRodin3D_Gen_2_5_ExtremeHigh_Text"
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
+        "Node name for S&R": "mRodin3D_Gen_2_5_Fast_Image"
       },
       "widgets_values": [
-        "",
+        "Gen-2.5-Low",
         0,
-        "PBR",
-        "Raw",
-        1000000,
+        "Shaded",
         "glb",
-        "high",
-        false,
-        false,
+        20000,
+        "Default",
         false
       ]
     },
     {
-      "id": 74,
+      "id": 76,
+      "type": "mRodin3D_Gen_2_5_Regular_Image",
+      "pos": [
+        894.6996364783324,
+        970.8081409120406
+      ],
+      "size": [
+        346.3150390625,
+        262
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 102
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 103
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            104
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
+        "Node name for S&R": "mRodin3D_Gen_2_5_Regular_Image"
+      },
+      "widgets_values": [
+        "Gen-2.5-High",
+        0,
+        "Shaded",
+        "Default",
+        "glb",
+        "Default",
+        false
+      ]
+    },
+    {
+      "id": 77,
       "type": "mRodin3D_Gen_2_5_ExtremeHigh_Image",
       "pos": [
         1399.5928997595838,
@@ -1836,12 +1708,12 @@
         {
           "name": "api_key",
           "type": "APIKEY",
-          "link": 96
+          "link": 105
         },
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 97
+          "link": 106
         },
         {
           "name": "bbox",
@@ -1861,22 +1733,200 @@
           "name": "model_path",
           "type": "STRING",
           "links": [
-            98
+            107
           ]
         }
       ],
       "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
         "Node name for S&R": "mRodin3D_Gen_2_5_ExtremeHigh_Image"
       },
       "widgets_values": [
         0,
-        "PBR",
+        "Shaded",
         "Raw",
         1000000,
         "glb",
         "high",
         false,
         false,
+        false
+      ]
+    },
+    {
+      "id": 80,
+      "type": "mRodin3D_Gen_2_5_ExtremeHigh_Text",
+      "pos": [
+        801.8415972795831,
+        2195.2945101720397
+      ],
+      "size": [
+        400,
+        344
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 112
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            113
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
+        "Node name for S&R": "mRodin3D_Gen_2_5_ExtremeHigh_Text"
+      },
+      "widgets_values": [
+        "Low-poly stylized tree",
+        0,
+        "Shaded",
+        "Raw",
+        1000000,
+        "glb",
+        "high",
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 79,
+      "type": "mRodin3D_Gen_2_5_Regular_Text",
+      "pos": [
+        326.6987972795823,
+        2192.1364101720383
+      ],
+      "size": [
+        400,
+        296
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 110
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            111
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
+        "Node name for S&R": "mRodin3D_Gen_2_5_Regular_Text"
+      },
+      "widgets_values": [
+        "Low-poly stylized tree",
+        "Gen-2.5-High",
+        0,
+        "Shaded",
+        "Default",
+        "glb",
+        "Default",
+        false
+      ]
+    },
+    {
+      "id": 78,
+      "type": "mRodin3D_Gen_2_5_Fast_Text",
+      "pos": [
+        -134.49270272041795,
+        2190.3819101720374
+      ],
+      "size": [
+        400,
+        296
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 108
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            109
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "DeemosTech/ComfyUI-Rodin",
+        "ver": "44c048968c8be5a1ead01b7500f48343abcdd0eb",
+        "Node name for S&R": "mRodin3D_Gen_2_5_Fast_Text"
+      },
+      "widgets_values": [
+        "Low-poly stylized tree",
+        "Gen-2.5-Low",
+        0,
+        "Shaded",
+        "glb",
+        20000,
+        "Default",
         false
       ]
     }
@@ -1931,22 +1981,6 @@
       "APIKEY"
     ],
     [
-      66,
-      57,
-      0,
-      41,
-      0,
-      "APIKEY"
-    ],
-    [
-      67,
-      57,
-      0,
-      43,
-      0,
-      "APIKEY"
-    ],
-    [
       69,
       40,
       0,
@@ -1977,70 +2011,6 @@
       56,
       2,
       "STRING"
-    ],
-    [
-      73,
-      41,
-      0,
-      58,
-      2,
-      "STRING"
-    ],
-    [
-      74,
-      43,
-      0,
-      59,
-      2,
-      "STRING"
-    ],
-    [
-      76,
-      61,
-      0,
-      42,
-      0,
-      "APIKEY"
-    ],
-    [
-      77,
-      61,
-      0,
-      44,
-      0,
-      "APIKEY"
-    ],
-    [
-      79,
-      42,
-      0,
-      62,
-      2,
-      "STRING"
-    ],
-    [
-      80,
-      44,
-      0,
-      63,
-      2,
-      "STRING"
-    ],
-    [
-      82,
-      66,
-      0,
-      41,
-      1,
-      "IMAGE"
-    ],
-    [
-      83,
-      66,
-      0,
-      43,
-      1,
-      "IMAGE"
     ],
     [
       85,
@@ -2115,42 +2085,122 @@
       "STRING"
     ],
     [
-      94,
-      61,
-      0,
-      73,
-      0,
-      "APIKEY"
-    ],
-    [
-      95,
-      73,
-      0,
-      64,
-      2,
-      "STRING"
-    ],
-    [
-      96,
+      99,
       57,
       0,
-      74,
+      75,
       0,
       "APIKEY"
     ],
     [
-      97,
+      100,
       66,
       0,
-      74,
+      75,
       1,
       "IMAGE"
     ],
     [
-      98,
-      74,
+      101,
+      75,
+      0,
+      58,
+      2,
+      "STRING"
+    ],
+    [
+      102,
+      57,
+      0,
+      76,
+      0,
+      "APIKEY"
+    ],
+    [
+      103,
+      66,
+      0,
+      76,
+      1,
+      "IMAGE"
+    ],
+    [
+      104,
+      76,
+      0,
+      59,
+      2,
+      "STRING"
+    ],
+    [
+      105,
+      57,
+      0,
+      77,
+      0,
+      "APIKEY"
+    ],
+    [
+      106,
+      66,
+      0,
+      77,
+      1,
+      "IMAGE"
+    ],
+    [
+      107,
+      77,
       0,
       60,
+      2,
+      "STRING"
+    ],
+    [
+      108,
+      61,
+      0,
+      78,
+      0,
+      "APIKEY"
+    ],
+    [
+      109,
+      78,
+      0,
+      62,
+      2,
+      "STRING"
+    ],
+    [
+      110,
+      61,
+      0,
+      79,
+      0,
+      "APIKEY"
+    ],
+    [
+      111,
+      79,
+      0,
+      63,
+      2,
+      "STRING"
+    ],
+    [
+      112,
+      61,
+      0,
+      80,
+      0,
+      "APIKEY"
+    ],
+    [
+      113,
+      80,
+      0,
+      64,
       2,
       "STRING"
     ]
@@ -2184,7 +2234,7 @@
     },
     {
       "id": 3,
-      "title": "Rodin Gen-1.5 Image-to-3D Generate",
+      "title": "Rodin Gen-2.5 Image-to-3D Generate",
       "bounding": [
         -141.19815549041653,
         735.5351428120398,
@@ -2227,8 +2277,8 @@
     "ds": {
       "scale": 0.7513148009015777,
       "offset": [
-        758.3333731387153,
-        1068.869817866382
+        681.364076204748,
+        996.8834510661343
       ]
     },
     "frontendVersion": "1.42.11"
