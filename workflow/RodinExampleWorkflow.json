@@ -1,0 +1,2237 @@
+{
+  "id": "c73f1ca0-0ff5-4411-b836-7773aa294085",
+  "revision": 0,
+  "last_node_id": 74,
+  "last_link_id": 98,
+  "nodes": [
+    {
+      "id": 50,
+      "type": "Preview3D",
+      "pos": [
+        770.7856217095823,
+        -1187.9097850679602
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 61
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-17-50/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-17-50",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35,
+          "state": {
+            "position": {
+              "x": 6.109317059185448,
+              "y": 3.2178122518865404,
+              "z": 9.26308188865691
+            },
+            "target": {
+              "x": 0,
+              "y": 2.5,
+              "z": 0
+            },
+            "zoom": 1,
+            "cameraType": "perspective"
+          }
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-17-50/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 53,
+      "type": "Preview3D",
+      "pos": [
+        672.7655083095832,
+        -521.0229730679598
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 69
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-15-39/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-15-39",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-15-39/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 55,
+      "type": "Preview3D",
+      "pos": [
+        661.4919383095827,
+        113.51796693204012
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 70
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-15-55/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-15-55",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-15-55/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 56,
+      "type": "Preview3D",
+      "pos": [
+        1431.3157183095832,
+        116.73898693204013
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 72
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-14-25/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-14-25",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-14-25/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 54,
+      "type": "Preview3D",
+      "pos": [
+        1423.2631683095824,
+        -530.6860330679597
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 71
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-15-35/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-15-35",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-15-35/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 40,
+      "type": "mRodin3D_Regular",
+      "pos": [
+        334.54987170958213,
+        -512.1933150679596
+      ],
+      "size": [
+        270,
+        166
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 85
+        },
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 62
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            69
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Regular"
+      },
+      "widgets_values": [
+        0,
+        "PBR",
+        "18K-Quad"
+      ]
+    },
+    {
+      "id": 37,
+      "type": "mRodin3D_Smooth",
+      "pos": [
+        335.5662717095821,
+        116.1778349320397
+      ],
+      "size": [
+        270,
+        166
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 86
+        },
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 63
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            70
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Smooth"
+      },
+      "widgets_values": [
+        0,
+        "PBR",
+        "18K-Quad"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "mRodin3D_Detail",
+      "pos": [
+        1106.6641817095815,
+        -523.5358550679601
+      ],
+      "size": [
+        270,
+        166
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 87
+        },
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 64
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            71
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Detail"
+      },
+      "widgets_values": [
+        0,
+        "PBR",
+        "18K-Quad"
+      ]
+    },
+    {
+      "id": 38,
+      "type": "mRodin3D_Sketch",
+      "pos": [
+        1096.1408117095814,
+        120.91982493203969
+      ],
+      "size": [
+        270,
+        122
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 88
+        },
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 65
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            72
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Sketch"
+      },
+      "widgets_values": [
+        0,
+        "PBR"
+      ]
+    },
+    {
+      "id": 58,
+      "type": "Preview3D",
+      "pos": [
+        381.2368445095823,
+        1318.261409912042
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 73
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-16-21/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-16-21",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-16-21/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 59,
+      "type": "Preview3D",
+      "pos": [
+        860.3968445095837,
+        1320.9234099120404
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 74
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-16-06/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-16-06",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-16-06/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 60,
+      "type": "Preview3D",
+      "pos": [
+        1398.120844509584,
+        1318.2614099120397
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 98
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-20-40/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-20-40",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-20-40/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 41,
+      "type": "mRodin3D_Gen_2_5_Fast_Image",
+      "pos": [
+        411.16389116583025,
+        973.1071409120397
+      ],
+      "size": [
+        323.7154296875,
+        262
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 66
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 82
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            73
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Gen_2_5_Fast_Image"
+      },
+      "widgets_values": [
+        "Gen-2.5-Medium",
+        0,
+        "PBR",
+        "glb",
+        20000,
+        "Default",
+        false
+      ]
+    },
+    {
+      "id": 43,
+      "type": "mRodin3D_Gen_2_5_Regular_Image",
+      "pos": [
+        894.6996364783324,
+        970.8081409120406
+      ],
+      "size": [
+        346.3150390625,
+        262
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 67
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 83
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            74
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Gen_2_5_Regular_Image"
+      },
+      "widgets_values": [
+        "Gen-2.5-Medium",
+        0,
+        "PBR",
+        "Default",
+        "glb",
+        "Default",
+        false
+      ]
+    },
+    {
+      "id": 62,
+      "type": "Preview3D",
+      "pos": [
+        -131.07876479041371,
+        2597.5075778920404
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 79
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-16-33/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-16-33",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35,
+          "state": {
+            "position": {
+              "x": -4.687320840266989,
+              "y": 3.8070619758789386,
+              "z": 15.081515800102975
+            },
+            "target": {
+              "x": 0,
+              "y": 2.5,
+              "z": 0
+            },
+            "zoom": 1,
+            "cameraType": "perspective"
+          }
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-16-33/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 63,
+      "type": "Preview3D",
+      "pos": [
+        334.9043352095872,
+        2603.0977778920387
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 80
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-16-58/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-16-58",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35,
+          "state": {
+            "position": {
+              "x": 0.5526493176658579,
+              "y": 6.717984417613542,
+              "z": 15.096221594470558
+            },
+            "target": {
+              "x": 0,
+              "y": 2.5,
+              "z": 0
+            },
+            "zoom": 1,
+            "cameraType": "perspective"
+          }
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-16-58/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 64,
+      "type": "Preview3D",
+      "pos": [
+        808.2079352095889,
+        2613.612677892038
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 95
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-20-34/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-20-34",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35,
+          "state": {
+            "position": {
+              "x": 3.5878190208276215,
+              "y": 6.0461503851769045,
+              "z": -14.916606338440728
+            },
+            "target": {
+              "x": 0,
+              "y": 2.5,
+              "z": 0
+            },
+            "zoom": 1,
+            "cameraType": "perspective"
+          }
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-20-34/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 66,
+      "type": "LoadImage",
+      "pos": [
+        -116.43776479041375,
+        1033.8487778920385
+      ],
+      "size": [
+        423.70112812499985,
+        633.4609999999998
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            82,
+            83,
+            97
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "Input_Example.png",
+        "image"
+      ]
+    },
+    {
+      "id": 65,
+      "type": "LoadImage",
+      "pos": [
+        -114.97366479041355,
+        -324.83602210795993
+      ],
+      "size": [
+        362.20892812499994,
+        576.3611
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            85,
+            86,
+            87,
+            88
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "Input_Example.png",
+        "image"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "pos": [
+        -98.80713315340968,
+        -1018.2209790909093
+      ],
+      "size": [
+        346.10382812499995,
+        350.88969999999995
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            89
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "Input_Example.png",
+        "image"
+      ]
+    },
+    {
+      "id": 35,
+      "type": "mRodin3D_Gen2",
+      "pos": [
+        380.60520170958216,
+        -1179.9193050679603
+      ],
+      "size": [
+        270,
+        190
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 89
+        },
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 60
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            61
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Gen2"
+      },
+      "widgets_values": [
+        0,
+        "PBR",
+        "500K-Triangle",
+        false
+      ]
+    },
+    {
+      "id": 42,
+      "type": "mRodin3D_Gen_2_5_Fast_Text",
+      "pos": [
+        -134.49270272041795,
+        2190.3819101720374
+      ],
+      "size": [
+        400,
+        296
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 76
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            79
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Gen_2_5_Fast_Text"
+      },
+      "widgets_values": [
+        "Low-poly stylized tree.",
+        "Gen-2.5-Medium",
+        0,
+        "PBR",
+        "glb",
+        20000,
+        "Default",
+        false
+      ]
+    },
+    {
+      "id": 44,
+      "type": "mRodin3D_Gen_2_5_Regular_Text",
+      "pos": [
+        326.6987972795823,
+        2192.1364101720383
+      ],
+      "size": [
+        400,
+        296
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 77
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            80
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Gen_2_5_Regular_Text"
+      },
+      "widgets_values": [
+        "Low-poly stylized tree.",
+        "Gen-2.5-Medium",
+        0,
+        "PBR",
+        "Default",
+        "glb",
+        "Default",
+        false
+      ]
+    },
+    {
+      "id": 69,
+      "type": "LoadImage",
+      "pos": [
+        1265.6167745317337,
+        -1017.5876690288793
+      ],
+      "size": [
+        346.10382812499995,
+        350.88969999999995
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            91
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "Input_Example.png",
+        "image"
+      ]
+    },
+    {
+      "id": 39,
+      "type": "mRodin3D_bbox_controlnet",
+      "pos": [
+        1660.022041709582,
+        -943.9253850679593
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "bbox",
+          "type": "STRING",
+          "links": [
+            93
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_bbox_controlnet"
+      },
+      "widgets_values": [
+        50,
+        100,
+        30
+      ]
+    },
+    {
+      "id": 70,
+      "type": "mRodin3D_Gen2",
+      "pos": [
+        2004.9437093947251,
+        -1178.5654950059302
+      ],
+      "size": [
+        270,
+        190
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 91
+        },
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 92
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": 93
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            90
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Gen2"
+      },
+      "widgets_values": [
+        0,
+        "PBR",
+        "500K-Triangle",
+        false
+      ]
+    },
+    {
+      "id": 68,
+      "type": "Preview3D",
+      "pos": [
+        2350.054929394729,
+        -1188.755975005931
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 90
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.1",
+        "Node name for S&R": "Preview3D",
+        "Last Time Model File": "D:/ComfyUI/ComfyUI/output/2026-05-19_17-18-45/base_basic_pbr.glb",
+        "Resource Folder": "ComfyUI/ComfyUI/output/2026-05-19_17-18-45",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35,
+          "state": {
+            "position": {
+              "x": 2.9088870206160564,
+              "y": 3.672853777897637,
+              "z": 10.392097760291874
+            },
+            "target": {
+              "x": 0,
+              "y": 2.5,
+              "z": 0
+            },
+            "zoom": 1,
+            "cameraType": "perspective"
+          }
+        },
+        "Light Config": {
+          "intensity": 3
+        }
+      },
+      "widgets_values": [
+        "D:/ComfyUI/ComfyUI/output/2026-05-19_17-18-45/base_basic_pbr.glb",
+        ""
+      ]
+    },
+    {
+      "id": 71,
+      "type": "Note",
+      "pos": [
+        1995.5227593947245,
+        -895.72057500593
+      ],
+      "size": [
+        278.42400000000043,
+        88
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Bbox input is supported by all Rodin nodes."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 34,
+      "type": "mLoadRodinAPIKEY",
+      "pos": [
+        -119.78594829041845,
+        -1169.3302350679617
+      ],
+      "size": [
+        376.9,
+        88
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "links": [
+            60
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mLoadRodinAPIKEY"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 67,
+      "type": "mLoadRodinAPIKEY",
+      "pos": [
+        1244.637959394725,
+        -1168.6969250059317
+      ],
+      "size": [
+        376.9,
+        88
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "links": [
+            92
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mLoadRodinAPIKEY"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 52,
+      "type": "mLoadRodinAPIKEY",
+      "pos": [
+        -130.43975169041627,
+        -505.06428306796005
+      ],
+      "size": [
+        376.9,
+        88
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "links": [
+            62,
+            63,
+            64,
+            65
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mLoadRodinAPIKEY"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 57,
+      "type": "mLoadRodinAPIKEY",
+      "pos": [
+        -124.56232189041577,
+        809.1351428120397
+      ],
+      "size": [
+        376.9,
+        88
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "links": [
+            66,
+            67,
+            96
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mLoadRodinAPIKEY"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 61,
+      "type": "mLoadRodinAPIKEY",
+      "pos": [
+        -128.27208509041455,
+        2030.287419992038
+      ],
+      "size": [
+        376.9,
+        88
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "links": [
+            76,
+            77,
+            94
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mLoadRodinAPIKEY"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 73,
+      "type": "mRodin3D_Gen_2_5_ExtremeHigh_Text",
+      "pos": [
+        801.8415972795831,
+        2195.2945101720397
+      ],
+      "size": [
+        400,
+        344
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 94
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            95
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Gen_2_5_ExtremeHigh_Text"
+      },
+      "widgets_values": [
+        "",
+        0,
+        "PBR",
+        "Raw",
+        1000000,
+        "glb",
+        "high",
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 74,
+      "type": "mRodin3D_Gen_2_5_ExtremeHigh_Image",
+      "pos": [
+        1399.5928997595838,
+        935.1554909120409
+      ],
+      "size": [
+        381.1578125,
+        310
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_key",
+          "type": "APIKEY",
+          "link": 96
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 97
+        },
+        {
+          "name": "bbox",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "height_cm",
+          "shape": 7,
+          "type": "INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [
+            98
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mRodin3D_Gen_2_5_ExtremeHigh_Image"
+      },
+      "widgets_values": [
+        0,
+        "PBR",
+        "Raw",
+        1000000,
+        "glb",
+        "high",
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "links": [
+    [
+      60,
+      34,
+      0,
+      35,
+      1,
+      "APIKEY"
+    ],
+    [
+      61,
+      35,
+      0,
+      50,
+      2,
+      "STRING"
+    ],
+    [
+      62,
+      52,
+      0,
+      40,
+      1,
+      "APIKEY"
+    ],
+    [
+      63,
+      52,
+      0,
+      37,
+      1,
+      "APIKEY"
+    ],
+    [
+      64,
+      52,
+      0,
+      36,
+      1,
+      "APIKEY"
+    ],
+    [
+      65,
+      52,
+      0,
+      38,
+      1,
+      "APIKEY"
+    ],
+    [
+      66,
+      57,
+      0,
+      41,
+      0,
+      "APIKEY"
+    ],
+    [
+      67,
+      57,
+      0,
+      43,
+      0,
+      "APIKEY"
+    ],
+    [
+      69,
+      40,
+      0,
+      53,
+      2,
+      "STRING"
+    ],
+    [
+      70,
+      37,
+      0,
+      55,
+      2,
+      "STRING"
+    ],
+    [
+      71,
+      36,
+      0,
+      54,
+      2,
+      "STRING"
+    ],
+    [
+      72,
+      38,
+      0,
+      56,
+      2,
+      "STRING"
+    ],
+    [
+      73,
+      41,
+      0,
+      58,
+      2,
+      "STRING"
+    ],
+    [
+      74,
+      43,
+      0,
+      59,
+      2,
+      "STRING"
+    ],
+    [
+      76,
+      61,
+      0,
+      42,
+      0,
+      "APIKEY"
+    ],
+    [
+      77,
+      61,
+      0,
+      44,
+      0,
+      "APIKEY"
+    ],
+    [
+      79,
+      42,
+      0,
+      62,
+      2,
+      "STRING"
+    ],
+    [
+      80,
+      44,
+      0,
+      63,
+      2,
+      "STRING"
+    ],
+    [
+      82,
+      66,
+      0,
+      41,
+      1,
+      "IMAGE"
+    ],
+    [
+      83,
+      66,
+      0,
+      43,
+      1,
+      "IMAGE"
+    ],
+    [
+      85,
+      65,
+      0,
+      40,
+      0,
+      "IMAGE"
+    ],
+    [
+      86,
+      65,
+      0,
+      37,
+      0,
+      "IMAGE"
+    ],
+    [
+      87,
+      65,
+      0,
+      36,
+      0,
+      "IMAGE"
+    ],
+    [
+      88,
+      65,
+      0,
+      38,
+      0,
+      "IMAGE"
+    ],
+    [
+      89,
+      3,
+      0,
+      35,
+      0,
+      "IMAGE"
+    ],
+    [
+      90,
+      70,
+      0,
+      68,
+      2,
+      "STRING"
+    ],
+    [
+      91,
+      69,
+      0,
+      70,
+      0,
+      "IMAGE"
+    ],
+    [
+      92,
+      67,
+      0,
+      70,
+      1,
+      "APIKEY"
+    ],
+    [
+      93,
+      39,
+      0,
+      70,
+      2,
+      "STRING"
+    ],
+    [
+      94,
+      61,
+      0,
+      73,
+      0,
+      "APIKEY"
+    ],
+    [
+      95,
+      73,
+      0,
+      64,
+      2,
+      "STRING"
+    ],
+    [
+      96,
+      57,
+      0,
+      74,
+      0,
+      "APIKEY"
+    ],
+    [
+      97,
+      66,
+      0,
+      74,
+      1,
+      "IMAGE"
+    ],
+    [
+      98,
+      74,
+      0,
+      60,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Rodin Gen-2 Generate",
+      "bounding": [
+        -142.78594829041845,
+        -1261.5097850679601,
+        1323.5715700000007,
+        633.6
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Rodin Gen-1.5 Generate",
+      "bounding": [
+        -140.43975169041627,
+        -604.2860330679597,
+        1981.7554699999996,
+        1281.0250199999996
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Rodin Gen-1.5 Image-to-3D Generate",
+      "bounding": [
+        -141.19815549041653,
+        735.5351428120398,
+        2012.2753000000002,
+        1184.9189670999995
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Rodin Gen-2.5 Text-to-3D Generate",
+      "bounding": [
+        -144.49270272041795,
+        1956.687419992038,
+        1362.700637930007,
+        1216.9252579000004
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "Rodin Bound Box Control Generate",
+      "bounding": [
+        1221.637959394725,
+        -1260.8764750059302,
+        1586.177870000001,
+        645.0466
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7513148009015777,
+      "offset": [
+        758.3333731387153,
+        1068.869817866382
+      ]
+    },
+    "frontendVersion": "1.42.11"
+  },
+  "version": 0.4
+}
